@@ -1,0 +1,149 @@
+/* Tokyo Night Theme for Gradio */
+
+/* Base Colors */
+:root {
+    --bg-color: #1a1b26;
+    --fg-color: #c0caf5;
+    --panel-bg: #1f2335; /* Slightly lighter background for panels */
+    --input-bg: #24283b; /* Background for inputs */
+    --border-color: #414868; /* Subtle border */
+    --label-color: #a9b1d6; /* Slightly brighter than main text */
+    --button-primary-bg: #7aa2f7; /* Blue */
+    --button-primary-hover: #5f87cf; /* Darker Blue */
+    --button-secondary-bg: #bb9af7; /* Purple */
+    --button-secondary-hover: #9a7fcf; /* Darker Purple */
+    --accent-cyan: #7dcfff;
+    --accent-green: #9ece6a;
+    --accent-red: #f7768e;
+}
+
+/* General Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    background-color: var(--bg-color) !important;
+    color: var(--fg-color) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* App Title */
+.gradio-container > .flex.flex-col > div:first-child h1 {
+    color: var(--accent-cyan) !important; /* Cyan title */
+    text-align: center !important;
+    margin-bottom: 30px !important;
+    font-size: 2.5em !important;
+    font-weight: bold !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+}
+
+/* General Component Styling */
+.gradio-container {
+    background-color: var(--panel-bg) !important;
+    border-radius: 10px !important;
+    padding: 30px !important;
+    margin: 20px auto !important;
+    max-width: 1200px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid var(--border-color) !important; /* Add subtle border to main container */
+}
+
+/* Input/Output Box Styling */
+.gr-panel, .gr-box {
+    background-color: var(--bg-color) !important; /* Darker background for contrast */
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    margin-bottom: 25px !important;
+}
+
+textarea, input[type="text"], .gr-dropdown select {
+    background-color: var(--input-bg) !important;
+    color: var(--fg-color) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 5px !important;
+    padding: 12px !important;
+}
+
+/* Label Styling */
+.gr-form .gr-label label span, .gr-block-label span {
+    color: var(--label-color) !important;
+    font-weight: bold !important;
+    font-size: 1.1em !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+}
+
+/* Button Styling */
+.gr-button { /* General button reset/base */
+    border: none !important;
+    padding: 12px 25px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-size: 1em !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease, transform 0.1s ease !important;
+    margin-top: 10px !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+    color: var(--bg-color) !important; /* Dark text for contrast on light buttons */
+}
+
+.gr-button.lg.primary, button.lg.primary { /* Submit Button */
+    background-color: var(--button-primary-bg) !important;
+    color: var(--bg-color) !important; /* Dark text on blue */
+}
+
+.gr-button.lg.primary:hover, button.lg.primary:hover {
+    background-color: var(--button-primary-hover) !important;
+    transform: translateY(-1px) !important;
+}
+
+.gr-button.lg.secondary, button.lg.secondary { /* Clear Button */
+    background-color: var(--button-secondary-bg) !important; /* Purple */
+    color: var(--bg-color) !important; /* Dark text on purple */
+}
+
+.gr-button.lg.secondary:hover, button.lg.secondary:hover {
+    background-color: var(--button-secondary-hover) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Image Upload Area */
+.upload-container, .image-preview, .gr-image {
+    border: 2px dashed var(--border-color) !important;
+    background-color: var(--input-bg) !important; /* Use input background */
+    border-radius: 8px !important;
+    padding: 30px !important;
+    text-align: center !important;
+    color: var(--label-color) !important;
+}
+
+.upload-container .upload-button, .gr-image .upload-button {
+     margin-top: 20px !important;
+     background-color: var(--border-color) !important; /* Use border color for subtle button */
+     color: var(--fg-color) !important;
+}
+.upload-container .upload-button:hover, .gr-image .upload-button:hover {
+    background-color: #565f89 !important; /* Slightly lighter grey */
+}
+
+
+/* Audio Component Styling */
+.gr-audio {
+    background-color: var(--input-bg) !important; /* Use input background */
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+}
+
+/* Make sure columns have some gap */
+.gr-row > .gr-column {
+    padding: 0 15px !important;
+}
+.gr-row > .gr-column:first-child {
+    padding-left: 0 !important;
+}
+.gr-row > .gr-column:last-child {
+    padding-right: 0 !important;
+}
