@@ -80,7 +80,9 @@ def process_inputs(text_input, audio_filepath, image_filepath):
     print(f"Returning: STT='{speech_to_text_output}', Response='{doctor_response[:50]}...', Audio='{voice_of_doctor}'") # Added logging
     # Ensure values are always returned, prepare audio update separately
     audio_update = gr.update(value=voice_of_doctor, autoplay=True) if voice_of_doctor else gr.update(value=None)
-    return speech_to_text_output, doctor_response, voice_of_doctor # Return filepath directly for troubleshooting
+    # Ensure values are always returned, prepare audio update separately
+    audio_update = gr.update(value=voice_of_doctor, autoplay=True) if voice_of_doctor else gr.update(value=None)
+    return speech_to_text_output, doctor_response, audio_update # Return 3 values, last one is the update dict
 
 # --- Helper functions for clearing inputs ---
 def clear_audio_input():
@@ -127,7 +129,7 @@ with gr.Blocks(theme=gr.themes.Base(), css="style.css") as demo:
     )
 
     # Link clear button to all relevant components
-    clear_btn.add([text_query, audio_query, image_input, stt_output, doc_response_output, audio_output])
+    # clear_btn.add([text_query, audio_query, image_input, stt_output, doc_response_output, audio_output]) # Temporarily disable for troubleshooting
     # --- End Event Listeners ---
 
 
