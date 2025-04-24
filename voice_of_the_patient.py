@@ -3,6 +3,7 @@ import logging
 import speech_recognition as sr
 from pydub import AudioSegment
 from io import BytesIO
+from load_env import load_environment_variables
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -44,17 +45,19 @@ audio_filepath = "patient_voice_test.mp3"
 import os 
 from groq import Groq
 
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
+# Load environment variables
+GROQ_API_KEY = load_environment_variables()
 stt_model = "whisper-large-v3"
 
-def transcribe_with_groq(stt_model, audio_filepath, GROQ_API_KEY):
-    client = Groq(api_key = GROQ_API_KEY)
+def transcribe_with_groq(GROQ_API_KEY, audio_filepath, stt_model):
+    client = Groq(api_key=GROQ_API_KEY)
     
     audio_file = open(audio_filepath, "rb")
     transcription = client.audio.transcriptions.create(
         model=stt_model,
-        file = audio_file,
-        language = "en"
+        file=audio_file,
+        language="en"
     )
+    audio_file.close()  # Close the file properly after use
 
     return transcription.text

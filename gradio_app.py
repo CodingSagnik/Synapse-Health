@@ -1,10 +1,14 @@
 #VoiceBot UI with Gradio
 import os
 import gradio as gr
+from load_env import load_environment_variables
 # Removed soundfile and numpy imports as they are no longer needed
 from brain_of_the_doctor import encode_image, analyze_image_with_query
 from voice_of_the_patient import transcribe_with_groq
 from voice_of_the_doctor import text_to_speech_with_gtts
+
+# Load environment variables
+GROQ_API_KEY = load_environment_variables()
 
 system_prompt="""You have to act as a professional doctor, i know you are not but this is for learning purpose.
             What's in this image?. Do you find anything wrong with it medically?
@@ -43,7 +47,7 @@ def process_inputs(text_input, audio_filepath, image_filepath):
         try:
             # Transcribe the file provided by Gradio
             print("Attempting transcription...")
-            speech_to_text_output = transcribe_with_groq(GROQ_API_KEY=os.environ.get("GROQ_API_KEY"),
+            speech_to_text_output = transcribe_with_groq(GROQ_API_KEY=GROQ_API_KEY,
                                                         audio_filepath=audio_filepath, # Use the provided path
                                                         stt_model="whisper-large-v3")
             user_query = speech_to_text_output
@@ -56,7 +60,7 @@ def process_inputs(text_input, audio_filepath, image_filepath):
     # Handle the image input (already validated that it exists)
     try:
         full_query = system_prompt + user_query
-        doctor_response = analyze_image_with_query(query=full_query, encoded_image=encode_image(image_filepath), model="meta-llama/llama-4-scout-17b-16e-instruct")
+        doctor_response = analyze_image_with_query(encoded_image=encode_image(image_filepath), query=full_query, model="meta-llama/llama-4-scout-17b-16e-instruct")
     except Exception as e:
         raise gr.Error(f"Error during image analysis: {e}")
 
@@ -78,8 +82,6 @@ def process_inputs(text_input, audio_filepath, image_filepath):
             # Keep voice_of_doctor as None
 
     print(f"Returning: STT='{speech_to_text_output}', Response='{doctor_response[:50]}...', Audio='{voice_of_doctor}'") # Added logging
-    # Ensure values are always returned, prepare audio update separately
-    audio_update = gr.update(value=voice_of_doctor, autoplay=True) if voice_of_doctor else gr.update(value=None)
     # Ensure values are always returned, prepare audio update separately
     audio_update = gr.update(value=voice_of_doctor, autoplay=True) if voice_of_doctor else gr.update(value=None)
     return speech_to_text_output, doctor_response, audio_update # Return 3 values, last one is the update dict
@@ -129,7 +131,7 @@ with gr.Blocks(theme=gr.themes.Base(), css="style.css") as demo:
     )
 
     # Link clear button to all relevant components
-    # clear_btn.add([text_query, audio_query, image_input, stt_output, doc_response_output, audio_output]) # Temporarily disable for troubleshooting
+    clear_btn.add([text_query, audio_query, image_input, stt_output, doc_response_output, audio_output])
     # --- End Event Listeners ---
 
 

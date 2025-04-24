@@ -1,6 +1,9 @@
 #Step 1: Setup GROQ API key
 import os
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
+from load_env import load_environment_variables
+
+# Load environment variables
+GROQ_API_KEY = load_environment_variables()
 
 #Step 2: Convert image to required format
 import base64
@@ -10,8 +13,8 @@ import base64
 #image_path = "acne.jpg"
 
 def encode_image(image_path):
-    image_file = open(image_path, "rb")
-    return base64.b64encode(image_file.read()).decode('utf-8')
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
 
 #Step 3: Setup Multimodal LLM 
 from groq import Groq
@@ -21,8 +24,8 @@ query = "Is there something wrong with my face?"
 model = "meta-llama/llama-4-scout-17b-16e-instruct"
 
 
-def analyze_image_with_query(query, model, encoded_image):
-    client = Groq()
+def analyze_image_with_query(query, encoded_image, model):
+    client = Groq(api_key=GROQ_API_KEY)
     
 
     messages=[
