@@ -1,3 +1,15 @@
+---
+title: Synapse Health
+emoji: 👀
+colorFrom: gray
+colorTo: green
+sdk: gradio
+sdk_version: 5.26.0
+app_file: app.py
+pinned: false
+license: mit
+---
+
 # Synapse Health
 
 Synapse Health is an AI-powered virtual health assistant that analyzes medical images and provides professional medical assessments. The application uses cutting-edge AI technologies to offer instant feedback on medical conditions.
