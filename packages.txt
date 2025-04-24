@@ -1,0 +1,6 @@
+ffmpeg
+libsm6
+libxext6
+python3-pyaudio
+portaudio19-dev
+python-dev
