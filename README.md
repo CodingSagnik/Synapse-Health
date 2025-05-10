@@ -26,6 +26,23 @@ Synapse Health is built using a modern tech stack that incorporates several powe
 
 ## File Structure and Functionality
 
+### Project Structure
+
+```
+synapse-health/
+├── app.py                     # Main application and UI integration
+├── brain_of_the_doctor.py     # Image analysis core functionality
+├── voice_of_the_patient.py    # Speech-to-text processing
+├── voice_of_the_doctor.py     # Text-to-speech conversion
+├── load_env.py                # Environment variables management
+├── style.css                  # Custom UI styling
+├── packages.txt               # System dependencies
+├── requirements.txt           # Python package dependencies
+├── Pipfile                    # Pipenv dependency management
+├── Pipfile.lock               # Pipenv lock file
+└── README.md                  # Project documentation
+```
+
 The project consists of several Python modules, each handling specific functionality:
 
 - **app.py**: The main application file that integrates all components and creates the Gradio web interface. It orchestrates the flow of data between the user interface and the underlying AI services.
