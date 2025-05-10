@@ -3,8 +3,9 @@
 #### Video Demo: <URL HERE>
 
 #### Description:
-
 Synapse Health is an innovative AI-powered virtual health assistant designed to bridge the gap between patients and medical expertise. This application harnesses the power of artificial intelligence to provide preliminary medical assessments by analyzing medical images and responding to patient queries through both text and voice interfaces. Developed as my final project for CS50x, Synapse Health represents a fusion of healthcare and cutting-edge AI technology to create a more accessible healthcare experience.
+![image](https://github.com/user-attachments/assets/c6296e70-a492-438c-b0f3-5743a834d015)
+
 
 ## Project Overview
 
