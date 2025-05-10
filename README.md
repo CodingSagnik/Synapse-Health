@@ -25,6 +25,7 @@ Synapse Health is built using a modern tech stack that incorporates several powe
 3. **Speech Technologies**: For a more natural interaction, the application incorporates speech-to-text capabilities for input using Whisper and text-to-speech for output using Google's gTTS (Google Text-to-Speech) service.
 
 4. **Environmental Variable Management**: Secure API key handling is implemented through environment variables, ensuring sensitive credentials are not hardcoded into the application.
+![g17](https://github.com/user-attachments/assets/3343eea1-7bc4-4579-acaf-8c804ba1a6a4)
 
 ## File Structure and Functionality
 
