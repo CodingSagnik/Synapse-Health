@@ -15,7 +15,7 @@ The application allows users to upload medical images (such as skin conditions, 
 ![image](https://github.com/user-attachments/assets/c6296e70-a492-438c-b0f3-5743a834d015)
 
 ## Technical Implementation
-
+![g17](https://github.com/user-attachments/assets/3343eea1-7bc4-4579-acaf-8c804ba1a6a4)
 Synapse Health is built using a modern tech stack that incorporates several powerful AI services and web technologies:
 
 1. **Gradio Framework**: The application uses Gradio to create an intuitive and responsive web interface that's both aesthetic and functional. Gradio allows for easy integration of various input and output components, making it ideal for this multimodal application.
@@ -25,7 +25,7 @@ Synapse Health is built using a modern tech stack that incorporates several powe
 3. **Speech Technologies**: For a more natural interaction, the application incorporates speech-to-text capabilities for input using Whisper and text-to-speech for output using Google's gTTS (Google Text-to-Speech) service.
 
 4. **Environmental Variable Management**: Secure API key handling is implemented through environment variables, ensuring sensitive credentials are not hardcoded into the application.
-![g17](https://github.com/user-attachments/assets/3343eea1-7bc4-4579-acaf-8c804ba1a6a4)
+
 
 ## File Structure and Functionality
 
