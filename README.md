@@ -1,11 +1,10 @@
-# SYNAPSE HEALTH: AI-Powered Virtual Health Assistant
+# Synapse Health: AI-Powered Virtual Health Assistant
 
-#### Video Demo: <URL HERE>
+#### Video Demo: https://youtu.be/x8ma5VC1bcI
 
 #### Description:
 Synapse Health is an innovative AI-powered virtual health assistant designed to bridge the gap between patients and medical expertise. This application harnesses the power of artificial intelligence to provide preliminary medical assessments by analyzing medical images and responding to patient queries through both text and voice interfaces. Developed as my final project for CS50x, Synapse Health represents a fusion of healthcare and cutting-edge AI technology to create a more accessible healthcare experience.
 
-![image](https://github.com/user-attachments/assets/c6296e70-a492-438c-b0f3-5743a834d015)
 
 
 ## Project Overview
@@ -13,9 +12,10 @@ Synapse Health is an innovative AI-powered virtual health assistant designed to 
 In many parts of the world, access to prompt medical advice remains a challenge. Patients often have to wait days or weeks for appointments, and those in remote areas may need to travel significant distances to consult with healthcare professionals. Synapse Health addresses this problem by providing an immediate first-line assessment tool that can analyze medical conditions through images and respond to user questions in a natural, conversational manner.
 
 The application allows users to upload medical images (such as skin conditions, rashes, or visible symptoms) and either type or speak their concerns. The AI then analyzes the image in context with the user's query and provides a professional medical assessment, complete with potential diagnoses and suggested remedies. The response is delivered both as text and as synthesized speech, making it accessible to users with different preferences and needs.
+![image](https://github.com/user-attachments/assets/c6296e70-a492-438c-b0f3-5743a834d015)
 
 ## Technical Implementation
-
+![g17](https://github.com/user-attachments/assets/3343eea1-7bc4-4579-acaf-8c804ba1a6a4)
 Synapse Health is built using a modern tech stack that incorporates several powerful AI services and web technologies:
 
 1. **Gradio Framework**: The application uses Gradio to create an intuitive and responsive web interface that's both aesthetic and functional. Gradio allows for easy integration of various input and output components, making it ideal for this multimodal application.
@@ -25,6 +25,7 @@ Synapse Health is built using a modern tech stack that incorporates several powe
 3. **Speech Technologies**: For a more natural interaction, the application incorporates speech-to-text capabilities for input using Whisper and text-to-speech for output using Google's gTTS (Google Text-to-Speech) service.
 
 4. **Environmental Variable Management**: Secure API key handling is implemented through environment variables, ensuring sensitive credentials are not hardcoded into the application.
+
 
 ## File Structure and Functionality
 
