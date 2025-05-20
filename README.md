@@ -103,3 +103,7 @@ While the current version of Synapse Health achieves its core goals, several enh
 4. **Multilingual Support**: Expanding the application to support multiple languages to reach a global audience.
 
 Synapse Health represents my vision of how AI can augment healthcare delivery, making preliminary medical assessments more accessible while maintaining a human-like interaction. This project synthesizes my learning from CS50x, particularly in web development, API integration, and creating responsive user interfaces, into a practical application with real-world utility.
+
+
+## Disclaimer
+Synapse Health is an educational prototype and not a substitute for professional medical advice.
