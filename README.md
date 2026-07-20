@@ -1,3 +1,13 @@
+---
+title: Synapse Health
+emoji: 🩺
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: 5.0.0
+app_file: app.py
+pinned: false
+---
 # Synapse Health: AI-Powered Virtual Health Assistant
 
 #### Video Demo: https://youtu.be/x8ma5VC1bcI
