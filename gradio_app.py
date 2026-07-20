@@ -60,7 +60,7 @@ def process_inputs(text_input, audio_filepath, image_filepath):
     # Handle the image input (already validated that it exists)
     try:
         full_query = system_prompt + user_query
-        doctor_response = analyze_image_with_query(encoded_image=encode_image(image_filepath), query=full_query, model="meta-llama/llama-4-scout-17b-16e-instruct")
+        doctor_response = analyze_image_with_query(encoded_image=encode_image(image_filepath), query=full_query, model="qwen/qwen3.6-27b")
     except Exception as e:
         raise gr.Error(f"Error during image analysis: {e}")
 

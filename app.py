@@ -55,7 +55,7 @@ def process_inputs(text_input, audio_filepath, image_filepath):
         full_query = system_prompt + user_query
         doctor_response = analyze_image_with_query(query=full_query, 
                                                  encoded_image=encode_image(image_filepath), 
-                                                 model="meta-llama/llama-4-scout-17b-16e-instruct")
+                                                 model="qwen/qwen3.6-27b")
     except Exception as e:
         raise gr.Error(f"Error during image analysis: {e}")
 
@@ -110,4 +110,4 @@ with gr.Blocks(theme=gr.themes.Base(), css="style.css") as demo:
 
 # Launch the app
 if __name__ == "__main__":
-    demo.launch(debug=False, share=True)
+    demo.launch(server_name="0.0.0.0", server_port=7860)
