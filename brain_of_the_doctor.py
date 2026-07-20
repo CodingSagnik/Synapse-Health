@@ -7,6 +7,7 @@ GROQ_API_KEY = load_environment_variables()
 
 #Step 2: Convert image to required format
 import base64
+import re
 
 
 
@@ -34,7 +35,7 @@ def analyze_image_with_query(query, encoded_image, model):
                 "content": [
                     {
                         "type": "text", 
-                        "text": query
+                        "text": query + " /no_think"
                     },
                     {
                         "type": "image_url",
@@ -50,4 +51,7 @@ def analyze_image_with_query(query, encoded_image, model):
         model = model
     )
 
-    return chat_completion.choices[0].message.content
+    response_text = chat_completion.choices[0].message.content
+    # Strip <think>...</think> blocks that Qwen outputs in thinking mode
+    response_text = re.sub(r'<think>.*?</think>', '', response_text, flags=re.DOTALL).strip()
+    return response_text
